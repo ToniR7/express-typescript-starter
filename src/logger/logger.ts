@@ -1,7 +1,7 @@
 import type { LeveledLogMethod, Logger } from 'winston'
 
 import { addColors, createLogger, format, transports } from 'winston'
-import { envVariables } from '@/environment'
+import { envVariables } from '#/environment/environmentVariables.ts'
 
 type CustomLogger = Logger & Record<keyof typeof customLevels.levels, LeveledLogMethod>
 

@@ -17,7 +17,7 @@ describe('Environment Variables', () => {
   it('should exit with error when environment validation fails', async () => {
     vi.stubEnv('PORT', '70000')
 
-    await import('@/environment/environmentVariables.js')
+    await import('#/environment/environmentVariables.ts')
 
     expect(console.error).toHaveBeenCalled()
     expect(process.exit).toHaveBeenCalledWith(1)
@@ -32,7 +32,7 @@ describe('Environment Variables', () => {
   it('should exit with error when required environment variables are missing', async () => {
     vi.stubEnv('TENANT_ID', undefined)
 
-    await import('@/environment/environmentVariables.js')
+    await import('#/environment/environmentVariables.ts')
 
     expect(console.error).toHaveBeenCalled()
     expect(process.exit).toHaveBeenCalledWith(1)
@@ -47,7 +47,7 @@ describe('Environment Variables', () => {
   it('should not exit with error when all environment variables are valid', async () => {
     process.env.NODE_ENV = 'production'
 
-    const { envVariables } = await import('@/environment/environmentVariables.js')
+    const { envVariables } = await import('#/environment/environmentVariables.ts')
 
     expect(console.error).not.toHaveBeenCalled()
     expect(process.exit).not.toHaveBeenCalled()

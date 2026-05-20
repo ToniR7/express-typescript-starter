@@ -1,9 +1,9 @@
 import type { NextFunction, Request, Response } from 'express'
-import type { ApiResponse } from '@/models/responses'
+import type { ApiResponse } from '#/models/responses.ts'
 
 import { StatusCodes } from 'http-status-codes'
-import { ApiError } from '@/errors'
-import { errorsMiddleware } from '@/middlewares'
+import { ApiError } from '#/errors/apiError.ts'
+import { errorsMiddleware } from '#/middlewares/index.ts'
 
 describe('errorsMiddleware', () => {
   let req: Request

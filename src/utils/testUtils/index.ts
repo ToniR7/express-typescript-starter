@@ -1,2 +1,2 @@
-export * from './constants'
-export * from './models'
+export * from './constants.ts'
+export * from './models.ts'

@@ -1,6 +1,6 @@
 import type { Server } from 'node:http'
 
-import { logger } from '@/logger'
+import { logger } from '#/logger/logger.ts'
 
 export const shutdown = async (server: Server): Promise<never> => {
   logger.info('Shutdown signal received')

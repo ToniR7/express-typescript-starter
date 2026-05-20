@@ -1,9 +1,9 @@
 import type { NextFunction, Request, Response } from 'express'
-import type { ApiResponse } from '@/models/responses'
+import type { ApiResponse } from '#/models/responses.ts'
 
 import { StatusCodes } from 'http-status-codes'
-import { ApiError } from '@/errors'
-import { logger } from '@/logger'
+import { ApiError } from '#/errors/apiError.ts'
+import { logger } from '#/logger/logger.ts'
 
 export const errorsMiddleware = (err: Error, _req: Request, res: Response, _next: NextFunction): void => {
   if (err instanceof ApiError) {

@@ -1,10 +1,10 @@
 import type { Express } from 'express'
-import type { ApiResponse } from '@/models/responses'
+import type { ApiResponse } from '#/models/responses.ts'
 
 import express from 'express'
 import { StatusCodes } from 'http-status-codes'
 import request from 'supertest'
-import { setAppConfigurations, setAppRoutes } from '@/utils'
+import { setAppConfigurations, setAppRoutes } from '#/utils/index.ts'
 
 const ENDPOINT = '/healthz'
 

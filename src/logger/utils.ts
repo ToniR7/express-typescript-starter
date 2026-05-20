@@ -1,7 +1,7 @@
 import type { Request } from 'express'
 
 import morgan from 'morgan'
-import { logger } from '@/logger'
+import { logger } from '#/logger/logger.ts'
 
 export const apiRequestLogger = morgan(':method :url', {
   immediate: true,

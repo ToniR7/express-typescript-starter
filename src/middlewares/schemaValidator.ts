@@ -1,10 +1,10 @@
 import type { NextFunction, Request, RequestHandler, Response } from 'express'
 import type { ZodError, ZodObject, core } from 'zod'
-import type { ApiResponse } from '@/models/responses'
+import type { ApiResponse } from '#/models/responses.ts'
 
 import { StatusCodes } from 'http-status-codes'
 import { z } from 'zod'
-import { logger } from '@/logger'
+import { logger } from '#/logger/logger.ts'
 
 type ZodStrictObject = ZodObject<core.$ZodShape>
 type ZodLooseObject = ZodObject<core.$ZodLooseShape>

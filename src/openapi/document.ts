@@ -1,6 +1,8 @@
-import { description, name, version } from '@package'
+import pkg from '#package' with { type: 'json' }
 import { createDocument } from 'zod-openapi'
-import { healthzOperation } from '@/openapi/routes'
+import { healthzOperation } from '#/openapi/routes/index.ts'
+
+const { name, version, description } = pkg
 
 export const openApiDocument = createDocument({
   openapi: '3.1.1',

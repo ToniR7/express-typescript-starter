@@ -1,9 +1,9 @@
 import type { Server } from 'node:http'
 
-import { logger } from '@/logger'
-import { shutdown } from '@/utils/serverShutdown'
+import { logger } from '#/logger/logger.ts'
+import { shutdown } from '#/utils/serverShutdown.ts'
 
-vi.mock('@/logger', () => ({
+vi.mock('#/logger/logger.ts', () => ({
   logger: {
     info: vi.fn(),
     error: vi.fn(),

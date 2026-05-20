@@ -1,4 +1,4 @@
-import { obtainRoleAndDivision } from '@/utils/authentication'
+import { obtainRoleAndDivision } from '#/utils/authentication.ts'
 
 describe('obtainRoleAndDivision', () => {
   it('should return admin role and all divisions when roles include admin', () => {

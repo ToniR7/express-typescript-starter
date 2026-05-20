@@ -2,9 +2,9 @@ import type { Express } from 'express'
 import type { Server } from 'node:http'
 
 import express from 'express'
-import { envVariables } from '@/environment'
-import { logger } from '@/logger'
-import { getIPv4Addresses, setAppConfigurations, setAppRoutes, shutdown } from '@/utils'
+import { envVariables } from '#/environment/index.ts'
+import { logger } from '#/logger/logger.ts'
+import { getIPv4Addresses, setAppConfigurations, setAppRoutes, shutdown } from '#/utils/index.ts'
 
 const initServer = (app: Express): void => {
   const { PORT } = envVariables

@@ -1,9 +1,9 @@
 import type { ZodOpenApiOperationObject } from 'zod-openapi'
 
 import { StatusCodes } from 'http-status-codes'
-import { healthzResponseSchema } from '@/models/apiSchemas/healthz'
-import { emptyStrictSchema } from '@/models/commonSchemas'
-import { INTERNAL_SERVER_ERROR_RESPONSE } from '@/openapi/fixtures'
+import { healthzResponseSchema } from '#/models/apiSchemas/healthz.ts'
+import { emptyStrictSchema } from '#/models/commonSchemas.ts'
+import { INTERNAL_SERVER_ERROR_RESPONSE } from '#/openapi/fixtures.ts'
 
 export const healthzOperation: ZodOpenApiOperationObject = {
   operationId: 'getHealthz',

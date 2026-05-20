@@ -12,9 +12,9 @@
       ["value-parent", "value-sibling", "value-index"],
       "unknown"
     ],
+    "internalPattern": ["#/"],
     "newlinesBetween": false
   },
-  "sortPackageJson": false,
   "printWidth": 160,
   "semi": false,
   "singleQuote": true,

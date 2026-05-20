@@ -1,4 +1,4 @@
-import { getIPv4Addresses } from '@/utils/network'
+import { getIPv4Addresses } from '#/utils/network.ts'
 
 describe('getIPv4Addresses', () => {
   it('should return an array of IPv4 addresses', () => {

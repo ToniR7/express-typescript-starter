@@ -1,7 +1,7 @@
 import type { ZodOpenApiResponsesObject } from 'zod-openapi'
 
 import { ReasonPhrases, StatusCodes } from 'http-status-codes'
-import { apiResponseSchema } from '@/models/responses'
+import { apiResponseSchema } from '#/models/responses.ts'
 
 const content = {
   'application/json': {

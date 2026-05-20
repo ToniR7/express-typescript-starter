@@ -1,37 +1,28 @@
-# ----------- Node version -----------
-ARG NODE_VERSION=24.14.1-alpine3.22
-
 # ----------- STAGE 1: Build -----------
-FROM node:${NODE_VERSION} AS builder
+FROM node:24.14.1-alpine3.23 AS base
 WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci --ignore-scripts
-
-COPY src ./src
-COPY tsconfig.json tsconfig.build.json ./
-RUN npm run build
 
 # ----------- STAGE 2: Deps -----------
-FROM node:${NODE_VERSION} AS dependencies
-WORKDIR /app
+FROM base AS dependencies
 
 COPY package*.json ./
 RUN npm ci --omit=dev --ignore-scripts
 
-# ----------- STAGE 3: Runtime -----------
-FROM node:${NODE_VERSION} AS final
-WORKDIR /usr/src/app
+# ----------- STAGE 3: Production -----------
+FROM base AS production
 
-COPY --from=builder /app/dist ./dist
+RUN apk add --no-cache dumb-init
+
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY package*.json ./
+COPY src ./src
 
 RUN addgroup -S appgroup -g 1001 \
  && adduser -S appuser -u 1001 -G appgroup \
- && chown -R appuser:appgroup /usr/src/app
+ && chown -R appuser:appgroup /app
  
 USER appuser
 
 EXPOSE 5010
-CMD ["node", "dist/app.js"]
+
+CMD ["dumb-init", "node", "src/app.ts"]

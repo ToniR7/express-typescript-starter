@@ -1,16 +1,16 @@
 import type { Express, Response } from 'express'
-import type * as EnvModule from '@/environment/environmentVariables'
-import type { ApiResponse } from '@/models/responses'
-import type { TypedRequest } from '@/typings/express'
+import type * as EnvModule from '#/environment/environmentVariables.ts'
+import type { ApiResponse } from '#/models/responses.ts'
+import type { TypedRequest } from '#/typings/express.d.ts'
 
 import express from 'express'
 import { StatusCodes } from 'http-status-codes'
 import request from 'supertest'
-import { setAppConfigurations, setAppRoutes } from '@/utils/appInitialization'
-import { FAKE_JWT_TOKEN } from '@/utils/testUtils/constants'
+import { setAppConfigurations, setAppRoutes } from '#/utils/appInitialization.ts'
+import { FAKE_JWT_TOKEN } from '#/utils/testUtils/constants.ts'
 
-vi.mock('@/environment/environmentVariables', async () => {
-  const actual = await vi.importActual<typeof EnvModule>('@/environment/environmentVariables')
+vi.mock('#/environment/environmentVariables.ts', async () => {
+  const actual = await vi.importActual<typeof EnvModule>('#/environment/environmentVariables.ts')
   return {
     ...actual,
     envVariables: {

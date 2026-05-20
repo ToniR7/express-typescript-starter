@@ -1,1 +1,1 @@
-export * from './healthz'
+export * from './healthz.ts'

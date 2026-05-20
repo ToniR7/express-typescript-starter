@@ -1,14 +1,14 @@
 import type { Express, Response } from 'express'
-import type { ApiResponse } from '@/models/responses'
-import type { TypedRequest } from '@/typings/express'
+import type { ApiResponse } from '#/models/responses.ts'
+import type { TypedRequest } from '#/typings/express.d.ts'
 
 import express from 'express'
 import { StatusCodes } from 'http-status-codes'
 import request from 'supertest'
-import { validateZodHandler } from '@/middlewares/schemaValidator'
-import { setAppConfigurations, setAppRoutes } from '@/utils/appInitialization'
-import { FAKE_JWT_TOKEN } from '@/utils/testUtils/constants'
-import { testBodySchema, testHeaderSchema, testParamsSchema, testQuerySchema } from '@/utils/testUtils/models'
+import { validateZodHandler } from '#/middlewares/schemaValidator.ts'
+import { setAppConfigurations, setAppRoutes } from '#/utils/appInitialization.ts'
+import { FAKE_JWT_TOKEN } from '#/utils/testUtils/constants.ts'
+import { testBodySchema, testHeaderSchema, testParamsSchema, testQuerySchema } from '#/utils/testUtils/models.ts'
 
 describe('Schema validation middleware', () => {
   const app: Express = express()

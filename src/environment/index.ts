@@ -1,1 +1,1 @@
-export * from './environmentVariables'
+export * from './environmentVariables.ts'

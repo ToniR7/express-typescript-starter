@@ -3,9 +3,9 @@ import type { Express } from 'express'
 import cors from 'cors'
 import express from 'express'
 import helmet from 'helmet'
-import { apiRequestLogger, apiResponseLogger } from '@/logger'
-import { authenticationMiddleware, bodyParserMiddleware, errorsMiddleware, rateLimiter } from '@/middlewares'
-import { healthzRouter } from '@/routes'
+import { apiRequestLogger, apiResponseLogger } from '#/logger/utils.ts'
+import { authenticationMiddleware, bodyParserMiddleware, errorsMiddleware, rateLimiter } from '#/middlewares/index.ts'
+import { healthzRouter } from '#/routes/index.ts'
 
 export const setAppConfigurations = (app: Express): void => {
   app.use(helmet())

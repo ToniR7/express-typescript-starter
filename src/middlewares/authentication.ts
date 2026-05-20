@@ -2,12 +2,12 @@ import type { NextFunction, Request, Response } from 'express'
 import type { JwtHeader, SigningKeyCallback, VerifyOptions } from 'jsonwebtoken'
 import type { JwtPayload } from 'jwt-decode'
 
-import { verify as verifyJwt } from 'jsonwebtoken'
+import JsonWebToken from 'jsonwebtoken'
 import JwksClient from 'jwks-rsa'
 import { jwtDecode } from 'jwt-decode'
-import { envVariables } from '@/environment'
-import { ApiError } from '@/errors'
-import { obtainRoleAndDivision } from '@/utils/authentication'
+import { envVariables } from '#/environment/index.ts'
+import { ApiError } from '#/errors/apiError.ts'
+import { obtainRoleAndDivision } from '#/utils/authentication.ts'
 
 type JwtPayloadExtended = JwtPayload &
   Partial<{
@@ -66,7 +66,7 @@ const validateJwtToken = async (req: Request, _res: Response, next: NextFunction
 
   req.jwt = {
     user: upn ?? preferred_username ?? 'backend',
-    company: company ?? 'uknown',
+    company: company ?? 'brembo',
     division: division[0] ?? 'transformation',
     role,
   }
@@ -80,7 +80,7 @@ const validateJwtToken = async (req: Request, _res: Response, next: NextFunction
     issuer: `https://login.microsoftonline.com/${TENANT_ID}/v2.0`, // string or array of strings of valid values for the iss field into payload section
   }
 
-  verifyJwt(token, getPublicKey(TENANT_ID), validationOptions, (error) => {
+  JsonWebToken.verify(token, getPublicKey(TENANT_ID), validationOptions, (error) => {
     if (error) {
       return next(
         ApiError.unauthorizedError({

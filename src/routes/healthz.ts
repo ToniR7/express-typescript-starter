@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import { healthzHandler } from '@/apis'
-import { validateZodHandler } from '@/middlewares'
-import { emptyLooseSchema, emptyStrictSchema } from '@/models/commonSchemas'
+import { healthzHandler } from '#/apis/index.ts'
+import { validateZodHandler } from '#/middlewares/index.ts'
+import { emptyLooseSchema, emptyStrictSchema } from '#/models/commonSchemas.ts'
 
 export const healthzRouter: Router = Router()
 healthzRouter.get(

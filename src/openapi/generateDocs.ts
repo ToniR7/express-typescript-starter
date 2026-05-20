@@ -1,9 +1,10 @@
-import { name } from '@package'
+import pkg from '#package' with { type: 'json' }
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import yaml from 'yaml'
-import { openApiDocument } from '@/openapi/document'
+import { openApiDocument } from '#/openapi/document.ts'
 
+const { name } = pkg
 const outputDir = join(process.cwd(), 'docs')
 
 try {
