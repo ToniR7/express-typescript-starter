@@ -1,0 +1,10 @@
+.vscode
+coverage
+dist
+docs
+node_modules
+
+vitest.*
+.oxlint*
+azure-pipelines.yml
+sonar-project.properties
