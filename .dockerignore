@@ -6,5 +6,3 @@ node_modules
 
 vitest.*
 .oxlint*
-azure-pipelines.yml
-sonar-project.properties

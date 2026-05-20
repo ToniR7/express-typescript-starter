@@ -5,7 +5,7 @@ import yaml from 'yaml'
 import { openApiDocument } from '#/openapi/document.ts'
 
 const { name } = pkg
-const outputDir = join(process.cwd(), 'docs')
+const outputDir = join(process.cwd(), 'docs', 'openapi')
 
 try {
   if (!existsSync(outputDir)) {
