@@ -1,0 +1,66 @@
+{
+  "ignorePatterns": ["dist/", "node_modules/", "coverage/", "build/"],
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "func-style": ["error", "expression"],
+    "getter-return": "error",
+    "import/no-duplicates": "error",
+    "no-array-constructor": "error",
+    "no-case-declarations": "error",
+    "no-empty": "error",
+    "no-empty-function": "error",
+    "no-fallthrough": "error",
+    "no-prototype-builtins": "error",
+    "no-redeclare": "error",
+    "no-regex-spaces": "error",
+    "no-restricted-imports": ["error", { "patterns": ["../**", "./**"] }],
+    "no-setter-return": "error",
+    "no-unexpected-multiline": "error",
+    "no-unreachable": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "ignoreRestSiblings": true,
+        "varsIgnorePattern": "^_|.*Schema$"
+      }
+    ],
+    "no-useless-constructor": "error",
+    "typescript/adjacent-overload-signatures": "error",
+    "typescript/array-type": ["error", { "default": "generic" }],
+    "typescript/consistent-generic-constructors": "error",
+    "typescript/consistent-indexed-object-style": ["error", "record"],
+    "typescript/consistent-type-assertions": ["error", { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }],
+    "typescript/consistent-type-definitions": ["error", "type"],
+    "typescript/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+    "typescript/explicit-function-return-type": "error",
+    "typescript/no-confusing-non-null-assertion": "error",
+    "typescript/no-dynamic-delete": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/no-extraneous-class": "error",
+    "typescript/no-inferrable-types": "error",
+    "typescript/no-namespace": "error",
+    "typescript/no-non-null-asserted-nullish-coalescing": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/no-require-imports": "error",
+    "typescript/no-unnecessary-type-constraint": "error",
+    "typescript/no-unsafe-function-type": "error",
+    "typescript/prefer-for-of": "error",
+    "typescript/prefer-function-type": "error",
+    "typescript/prefer-literal-enum-member": "error"
+  },
+  "overrides": [
+    {
+      "files": ["index.ts"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "node"]
+}

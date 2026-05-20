@@ -1,0 +1,8 @@
+.vscode
+coverage
+dist
+docs
+node_modules
+
+vitest.*
+.oxlint*

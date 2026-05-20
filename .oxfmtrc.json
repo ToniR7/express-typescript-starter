@@ -1,0 +1,23 @@
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "sortImports": {
+    "groups": [
+      "type-import",
+      "type-internal",
+      ["type-parent", "type-sibling", "type-index"],
+      { "newlinesBetween": true },
+      ["value-builtin", "value-external"],
+      "value-internal",
+      ["value-parent", "value-sibling", "value-index"],
+      "unknown"
+    ],
+    "internalPattern": ["#/"],
+    "newlinesBetween": false
+  },
+  "printWidth": 160,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false
+}

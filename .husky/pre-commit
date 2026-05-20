@@ -1,0 +1,81 @@
+# Colors
+RED="\033[31m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+CYAN="\033[36m"
+BLUE="\033[34m"
+MAGENTA="\033[35m"
+RESET="\033[0m"
+
+# Styles
+BOLD="\033[1m"
+UNDERLINE="\033[4m"
+ITALIC="\033[3m"
+
+# Functions
+divider() {
+  echo "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+}
+
+title() {
+  divider
+  echo "${ITALIC}$1${RESET}"
+  divider
+}
+
+success() {
+  echo "${GREEN}✓ $1\n${RESET}"
+}
+
+error() {
+  echo "${RED}✖ $1! Please address the issues before proceeding.\n${RESET}"
+}
+
+# Info message
+echo
+echo GIT HOOKS
+
+# Header
+echo
+title "📋 PRE-COMMIT CHECKS"
+echo "The following checks will be performed:"
+echo "· Unit tests execution"
+echo "· Code linting with automatic fixes when possible"
+echo "· Vulnerability scanning with npm audit"
+echo
+
+# Run unit tests
+title "🧪 RUNNING UNIT TESTS"
+if npm run test; then
+  success "Tests passed successfully"
+else
+  error "The unit tests failed"
+  exit 1
+fi
+
+# Run linting
+title "🧹 RUNNING LINTER"
+if npm run lint-staged; then
+  success "Linting completed successfully"
+else
+  error "Linting issues were found"
+  exit 1
+fi
+
+# Run npm audit
+title "🔍 CHECKING FOR VULNERABILITIES"
+if npm audit; then
+  success "No vulnerabilities found"
+else
+  error "Vulnerabilities were found"
+  exit 1
+fi
+
+# Run type checking
+title "🔍 CHECKING FOR TYPE ERRORS"
+if npm run typecheck; then
+  success "No type errors found"
+else
+  error "Type errors were found"
+  exit 1
+fi

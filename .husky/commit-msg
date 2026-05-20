@@ -1,0 +1,51 @@
+# Colors
+RED="\033[31m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+CYAN="\033[36m"
+BLUE="\033[34m"
+MAGENTA="\033[35m"
+RESET="\033[0m"
+
+# Styles
+BOLD="\033[1m"
+UNDERLINE="\033[4m"
+ITALIC="\033[3m"
+
+# Functions
+divider() {
+  echo "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+}
+
+title() {
+  divider
+  echo "${ITALIC}$1${RESET}"
+  divider
+}
+
+success() {
+  echo "${GREEN}✓ $1\n${RESET}"
+}
+
+error() {
+  echo "${RED}✖ $1! Please address the issues before proceeding.\n${RESET}"
+}
+
+# Header
+echo
+title "📋 COMMIT-MSG CHECKS"
+echo "The following checks will be performed:"
+echo "· Commit message format validation according to Conventional Commits"
+echo
+
+# Run commit message linting
+title "📝 VALIDATING COMMIT MESSAGE FORMAT"
+if npx --no -- commitlint --edit "$1"; then
+  success "Commit message format is valid"
+else
+  error "The commit message does not follow the Conventional Commits format"
+  exit 1
+fi
+
+# Final success message
+title "🎉 ALL HOOKS PASSED"

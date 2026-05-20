@@ -1,0 +1,72 @@
+{
+  "name": "express-typescript-starter",
+  "version": "1.0.0",
+  "description": "production-ready node.js boilerplate built with typescript and express",
+  "license": "ISC",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToniR7/express-typescript-starter"
+  },
+  "type": "module",
+  "main": "app.ts",
+  "imports": {
+    "#/*": "./src/*",
+    "#package": "./package.json"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest watch",
+    "depcheck": "npx depcheck --ignore-bin-package",
+    "updates": "ncu --format group",
+    "updates:interactive": "ncu -i --format group",
+    "updates:upgrade": "ncu -u",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint-staged": "lint-staged",
+    "openapi": "node --env-file=.env src/openapi/generateDocs.ts",
+    "typecheck": "tsc --noEmit",
+    "dev": "node --env-file=.env --watch src/app.ts",
+    "debug": "node --env-file=.env --watch --inspect src/app.ts",
+    "prod": "node src/app.ts",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.13.1",
+    "@azure/keyvault-secrets": "^4.11.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.1.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "jwks-rsa": "^4.0.1",
+    "jwt-decode": "^4.0.0",
+    "morgan": "^1.10.1",
+    "winston": "^3.19.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/express-serve-static-core": "^5.1.1",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.9.0",
+    "@types/supertest": "^7.2.0",
+    "@vitest/coverage-v8": "^4.1.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5",
+    "oxfmt": "^0.51.0",
+    "oxlint": "^1.66.0",
+    "supertest": "^7.2.2",
+    "type-fest": "^5.6.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.6",
+    "zod-openapi": "^5.4.6"
+  }
+}
