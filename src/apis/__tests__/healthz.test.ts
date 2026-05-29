@@ -44,9 +44,11 @@ describe(`GET ${ENDPOINT}`, () => {
   })
 
   it('should return a 200 status code', async () => {
-    const { status, body } = await request(app).get(ENDPOINT).send({})
+    const { status, body, text, headers } = await request(app).get(ENDPOINT).send({})
 
     expect(status).toEqual(StatusCodes.OK)
+    expect(text).toEqual('OK')
+    expect(headers['content-type']).toContain('text/plain')
     expect(body).toEqual({})
   })
 })
