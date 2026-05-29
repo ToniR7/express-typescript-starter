@@ -1,4 +1,4 @@
-<p align="left">
+<p align="center">
   <img src="docs/images/logo.png" alt="Express Typescript Starter Logo" width="500" />
 </p>
 
