@@ -5,10 +5,9 @@ import { rateLimit } from 'express-rate-limit'
 const options: Partial<Options> = {
   windowMs: 1 * 60 * 1000,
   limit: 100,
-  message: { message: 'Too many failed requests from this IP, please try again after 1 minute.' },
+  message: { message: 'Too many requests from this IP, please try again after 1 minute.' },
   standardHeaders: 'draft-8',
   legacyHeaders: false,
-  skipSuccessfulRequests: true,
 }
 
 export const rateLimiter: RateLimitRequestHandler = rateLimit(options)
