@@ -56,9 +56,10 @@ This boilerplate includes automatic OpenAPI/Swagger documentation generation tha
 #### Usage
 
 1. **Generate Documentation**: Run `npm run openapi` to generate the latest API documentation
-2. **View Documentation**: The generated files are saved in the `docs/` directory:
-   - `docs/openapi.json` - JSON format for programmatic use
-   - `docs/openapi.yaml` - YAML format for human readability
+2. **View Documentation**: The generated files are saved in the `docs/openapi/` directory:
+   - `docs/openapi/<package-name>.openapi.json` - JSON format for programmatic use
+   - `docs/openapi/<package-name>.openapi.yaml` - YAML format for human readability
+
 3. **Schema Definitions**: API schemas are defined in `src/models/` with OpenAPI extensions
 4. **Route Definitions**: OpenAPI route configurations are in `src/openapi/routes/`
 
@@ -133,8 +134,9 @@ project-name/
 │   └── commit-msg            # Commit message linting with commitlint
 │
 ├── docs/                     # Generated documentation
-│   ├── openapi.json          # OpenAPI specification in JSON format
-│   └── openapi.yaml          # OpenAPI specification in YAML format
+│   └── openapi/              # OpenAPI specification output directory
+│       ├── openapi.json      # OpenAPI specification in JSON format
+│       └── openapi.yaml      # OpenAPI specification in YAML format
 ├── node_modules/             # Installed dependencies
 │
 ├── src/                      # Source code
@@ -189,7 +191,7 @@ project-name/
 
 ### Documentation
 
-- `npm run openapi`: Generates OpenAPI/Swagger documentation from Zod schemas. Creates _openapi.json_ and _openapi.yaml_ files containing the complete API specification that can be used with Swagger UI or other OpenAPI tools.
+- `npm run openapi`: Generates OpenAPI/Swagger documentation from Zod schemas. Creates _openapi.json_ and _openapi.yaml_ files under _docs/openapi/_ containing the complete API specification that can be used with Swagger UI or other OpenAPI tools.
 
 ### Linting and Formatting
 
