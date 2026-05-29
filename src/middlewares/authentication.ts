@@ -66,8 +66,8 @@ const validateJwtToken = async (req: Request, _res: Response, next: NextFunction
 
   req.jwt = {
     user: upn ?? preferred_username ?? 'backend',
-    company: company ?? 'brembo',
-    division: division[0] ?? 'transformation',
+    company: company ?? 'unknown',
+    division: division[0] ?? 'unknown',
     role,
   }
 
