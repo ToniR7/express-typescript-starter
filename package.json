@@ -50,8 +50,8 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.1",
-    "@commitlint/config-conventional": "^21.0.1",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/express-serve-static-core": "^5.1.1",
