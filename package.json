@@ -67,6 +67,6 @@
     "type-fest": "^5.7.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.8",
-    "zod-openapi": "^5.4.6"
+    "zod-openapi": "^6.0.0"
   }
 }

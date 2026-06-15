@@ -5,7 +5,7 @@ import { healthzOperation } from '#/openapi/routes/index.ts'
 const { name, version, description } = pkg
 
 export const openApiDocument = createDocument({
-  openapi: '3.1.1',
+  openapi: '3.2.0',
   info: {
     title: name,
     version,
