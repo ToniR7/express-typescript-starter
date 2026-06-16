@@ -58,7 +58,7 @@
     "@types/morgan": "^1.9.10",
     "@types/node": "^25.9.3",
     "@types/supertest": "^7.2.0",
-    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/coverage-v8": "^4.1.9",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.7",
     "oxfmt": "^0.54.0",
@@ -66,7 +66,7 @@
     "supertest": "^7.2.2",
     "type-fest": "^5.7.0",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.8",
+    "vitest": "^4.1.9",
     "zod-openapi": "^6.0.0"
   }
 }
