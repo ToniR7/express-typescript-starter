@@ -1,5 +1,5 @@
 # ----------- STAGE 1: Build -----------
-FROM node:24.16.0-alpine3.23 AS base
+FROM node:24.17.0-alpine3.23 AS base
 WORKDIR /app
 
 # ----------- STAGE 2: Deps -----------
