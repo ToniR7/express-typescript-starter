@@ -60,7 +60,7 @@
     "@types/supertest": "^7.2.0",
     "@vitest/coverage-v8": "^4.1.9",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.7",
+    "lint-staged": "^17.0.8",
     "oxfmt": "^0.55.0",
     "oxlint": "^1.70.0",
     "supertest": "^7.2.2",
