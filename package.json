@@ -64,7 +64,7 @@
     "oxfmt": "^0.57.0",
     "oxlint": "^1.72.0",
     "supertest": "^7.2.2",
-    "type-fest": "^5.7.0",
+    "type-fest": "^5.8.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9",
     "zod-openapi": "^6.0.0"
