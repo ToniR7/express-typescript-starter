@@ -120,6 +120,25 @@ The documentation can be viewed using any OpenAPI/Swagger UI tool or integrated 
 3. Set up your environment variables (you can use the `.env.test` file as a reference to create your own `.env` file)
 4. Run the development server: `npm run dev`
 
+### Development with Docker
+
+Build the development image:
+
+```sh
+docker build --file Dockerfile.dev --tag express-typescript-starter:dev .
+```
+
+Run it with the source directory and environment file mounted from the host:
+
+```sh
+docker run --rm --init -p 5010:5010 \
+  --mount type=bind,source="$(pwd)/src",target=/app/src \
+  --mount type=bind,source="$(pwd)/.env",target=/app/.env,readonly \
+  express-typescript-starter:dev
+```
+
+The development container runs `npm run dev`, so changes under `src/` restart the server automatically.
+
 ## 📦 Project Structure
 
 ```
@@ -163,6 +182,7 @@ project-name/
 ├── .oxfmtrc.json             # Oxfmt configuration file for code formatting
 ├── .oxlintrc.json            # Oxlint configuration for linting the codebase
 ├── Dockerfile                # Instructions to build a Docker image of the project
+├── Dockerfile.dev            # Development image with hot reload support
 ├── LICENSE                   # Project license
 ├── package-lock.json         # Lockfile for package versions
 ├── package.json              # Project metadata, dependencies, and scripts
