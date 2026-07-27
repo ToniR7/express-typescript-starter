@@ -1,0 +1,14 @@
+FROM node:24.18.0-alpine3.23
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --ignore-scripts
+
+COPY tsconfig.json ./
+COPY src ./src
+
+USER node
+
+EXPOSE 5010
+
+CMD ["npm", "run", "dev"]
