@@ -2,7 +2,7 @@
   "name": "express-typescript-starter",
   "version": "1.0.0",
   "description": "production-ready node.js boilerplate built with typescript and express",
-  "license": "ISC",
+  "license": "MIT",
   "author": "",
   "repository": {
     "type": "git",
