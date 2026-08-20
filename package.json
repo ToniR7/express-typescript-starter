@@ -35,7 +35,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@azure/identity": "^4.13.1",
+    "@azure/identity": "^4.13.2",
     "@azure/keyvault-secrets": "^4.11.2",
     "cors": "^2.8.6",
     "express": "^5.2.1",
