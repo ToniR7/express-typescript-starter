@@ -61,7 +61,7 @@
     "@vitest/coverage-v8": "^4.1.11",
     "husky": "^9.1.7",
     "lint-staged": "^17.5.0",
-    "oxfmt": "^0.66.0",
+    "oxfmt": "^0.67.0",
     "oxlint": "^1.81.0",
     "supertest": "^7.2.2",
     "type-fest": "^5.9.0",
