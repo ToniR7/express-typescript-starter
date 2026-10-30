@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
       include: ['src/**/*.ts'],
       exclude: ['src/app.ts', 'src/utils/keyVault.ts', 'src/utils/testUtils/**', 'src/models/**', 'src/openapi/**', 'src/typings/**', 'src/**/index.ts'],
     },
-    env: loadEnv(mode, __dirname, ''),
+    env: loadEnv(mode, import.meta.dirname, ''),
     bail: 1,
     testTimeout: 15000,
   },
